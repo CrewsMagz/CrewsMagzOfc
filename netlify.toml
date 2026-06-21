@@ -1,0 +1,25 @@
+# Netlify Configuration
+# Configuração automática para deploy
+
+[build]
+  # Comando de build (não precisa para site estático)
+  command = "echo 'Static site, no build needed'"
+  # Pasta a publicar
+  publish = "."
+
+# Redirect de www para non-www (opcional)
+[[redirects]]
+  from = "https://www.revistacrew.com.br/*"
+  to = "https://revistacrew.com.br/:splat"
+  status = 301
+  force = true
+
+# Headers de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"

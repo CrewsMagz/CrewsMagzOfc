@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscreva-se — Revista Crew</title>
+<meta name="description" content="Cadastre-se na comunidade da Revista Crew.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Inscreva-se — Revista Crew">
+<meta property="og:description" content="Cadastre-se na comunidade da Revista Crew.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">REVISTA <span>CREW</span></a>
+    <nav class="nav" id="nav">
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="faca-parte.html">Faça parte</a>
+      <a href="anteriores.html">Anteriores</a>
+      <a href="inscreva-se.html" class="nav-cta is-active" aria-current="page">Inscreva-se</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero texture">
+  <div class="wrap">
+    <p class="eyebrow">Inscreva-se</p>
+    <h1 class="page-title">Entre para a comunidade</h1>
+    <p class="page-sub">Preencha o formulário abaixo e entraremos em contato para te adicionar à nossa comunidade.</p>
+  </div>
+</section>
+
+<section class="section" id="formulario">
+  <div class="wrap">
+    <p style="max-width:58ch; margin-bottom:32px; font-size:1.05rem;">
+      Ao se cadastrar, você passa a fazer parte da comunidade da Revista Crew: recebe as novas edições em primeira mão, é convidado para eventos e rolês, e conecta-se com outras pessoas que estão entrando no mundo da arte urbana.
+    </p>
+
+    <div class="form-card">
+      <form id="crew-form" action="https://formspree.io/f/mzdlpyro" method="POST" novalidate>
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label class="form-label" for="nome">Nome ou nome artístico <span>*</span></label>
+            <input class="form-input" type="text" id="nome" name="nome" placeholder="Como quer ser chamado" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail <span>*</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="celular">Celular <span>*</span></label>
+            <input class="form-input" type="tel" id="celular" name="celular" placeholder="(00) 00000-0000" autocomplete="tel" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="instagram">Instagram</label>
+            <input class="form-input" type="text" id="instagram" name="instagram" placeholder="@seuperfil">
+            <p class="form-hint">Opcional, mas nos ajuda a te conhecer melhor.</p>
+          </div>
+
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary">Quero entrar para a Crew →</button>
+          <p class="form-note">
+            Seus dados ficam só com a gente, usados exclusivamente para contato e convites da comunidade.
+            Dúvidas? Fala com a gente: <a href="mailto:crewsmagz@gmail.com">crewsmagz@gmail.com</a>
+          </p>
+        </div>
+      </form>
+
+      <div class="form-success" id="form-success" role="status" aria-live="polite">
+        <h3>Você está dentro!</h3>
+        <p>Recebemos seu cadastro. Em breve entraremos em contato e te adicionamos na comunidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-logo">REVISTA <span>CREW</span></p>
+        <p class="footer-tagline">Mostrando como a arte urbana se organiza para quem está chegando agora.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Site</h3>
+          <a href="quem-somos.html">Quem somos</a>
+          <a href="faca-parte.html">Faça parte</a>
+          <a href="anteriores.html">Anteriores</a>
+        </div>
+        <div class="footer-col">
+          <h3>Siga</h3>
+          <a href="https://www.instagram.com/revistacrew" target="_blank" rel="noopener">@revistacrew</a>
+          <a href="mailto:crewsmagz@gmail.com">crewsmagz@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Revista Crew. Projeto acadêmico.</span>
+      <span>Daniel Bomfim, Diego Frick e Pedro Beyruth.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Envio do formulário "Inscreva-se" via Formspree (sem recarregar a página)
+  (function () {
+    var form = document.getElementById("crew-form");
+    var success = document.getElementById("form-success");
+    if (!form) return;
+
+    function setFieldError(field, hasError) {
+      field.style.borderColor = hasError ? "var(--red)" : "";
+      field.setAttribute("aria-invalid", hasError ? "true" : "false");
+    }
+
+    function validate() {
+      var ok = true;
+      form.querySelectorAll("[required]").forEach(function (field) {
+        var valid = field.value.trim().length > 0;
+        if (field.type === "email" && valid) {
+          valid = field.checkValidity();
+        }
+        setFieldError(field, !valid);
+        if (!valid) ok = false;
+      });
+      return ok;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!validate()) {
+        var firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Enviando...";
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.style.display = "none";
+            success.style.display = "block";
+            success.scrollIntoView({ behavior: "smooth", block: "center" });
+          } else {
+            throw new Error("Falha no envio");
+          }
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+          alert("Não foi possível enviar seu cadastro agora. Tenta de novo em alguns instantes ou manda um e-mail para crewsmagz@gmail.com.");
+        });
+    });
+  })();
+</script>
+</body>
+</html>
